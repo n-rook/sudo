@@ -26,6 +26,7 @@ func print_message() {
 func main() {
 	rand.Seed(time.Now().UnixNano())
 	print_message()
+	time.Sleep(2 * time.Second)
 	err := syscall.Exec("/usr/bin/sudo", os.Args, os.Environ())
 	if err != nil {
 		fmt.Println(err)
